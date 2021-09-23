@@ -17,6 +17,7 @@ client.on("ready", () => {
 app.get(
   `/${process.env.SECRET}/:message`,
   async (req: Request, res: Response) => {
+    console.log(req.params.message);
     const channel: TextChannel | undefined = client.channels.cache.find(
       (channel) => channel.id === (process.env.CHANNEL_ID as string)
     ) as TextChannel | undefined;
