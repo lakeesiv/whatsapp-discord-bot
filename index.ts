@@ -1,9 +1,11 @@
 import { config } from "dotenv";
 import express, { Request, Response } from "express";
+import cors from "cors";
 config();
 import Discord, { Channel, TextChannel } from "discord.js";
 
 const app = express();
+app.use(cors());
 
 const client: Discord.Client = new Discord.Client();
 client.login(process.env.TOKEN);
